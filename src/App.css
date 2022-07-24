@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*background-color: #BDD2B6;*/
+}
+
+.cardHighlights {
+  min-height: 100%;
+}
+
+/** {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Sans', sans-serif;
+}*/
+
+Nav .active {
+    color: #ffe135 !important;
+}
+
+.btn-1{
+  textAlign:"center";
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gray {
+    color: #606060;
+}
+
+.gray--background {
+    background-color: #E6E6E6;
+    height: 100%;
+}
+
+.gap {
+    gap: 20px;
+}
+
+.text-link {
+    color: #484848;
+    text-decoration: inherit;
+}
+
+.text-link:hover {
+    color: #ffe135;
+    transition: .2s;
+}
+
+.paperStyle {
+    padding: 20px;
+    /*height: 75vh;*/
+    width: 80%;
+    margin: 30px auto;
+}
+
+.cart-header {
+    font-size: .95rem;
+}
+
+.dropdown-menu {
+    background-color: #212529 !important;
+    border: none !important;
+}
+
+.dropdown-item {
+    color: #FFFFFF8C !important;
+}
+
+.dashboard-container {
+    padding: 10px;
+    width: 100%;
+    max-width: 1020px;
+    margin: 10px auto;
+    height: 100vh;
+    border: 3px solid #E0E0E0;
+    border-radius: 3px;
+    overflow: scroll;
+}
+.adminpanel-container {
+    padding: 10px;
+    width: 100%;
+    max-width: 1020px;
+    margin: 10px auto;
+    height: 100vh;
+    border: 3px solid #E0E0E0;
+    border-radius: 3px;
+    overflow: scroll;
+}
+
+.products, .account-dashboard, .account-adminpanel, .orders {
+    flex: 4;
+}
+
+@media screen and (max-width: 450px) {
+    .dashboard-container {
+        border: hidden;
+    }
+}
+
+@media screen and (min-width: 390px) {
+    .paperStyle {
+        height: 50vh;
+    }
+}
+
+@media screen and (min-width: 540px) {
+    .paperStyle {
+        width: 55%;
+        height: 60vh;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .paperStyle {
+        width: 25%;
+        height: 75vh;
+    }
+    .cart-header {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .gray {
+        color: #505050;
+        font-size: 10px;
+    }
+}
+
