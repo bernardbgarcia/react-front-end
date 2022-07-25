@@ -16,15 +16,15 @@ import {Form, Button} from 'react-bootstrap';
 // 2 ways to render via function or class
 export default function AppNavbar() {
 
-	// const { user } = useContext(UserContext);
+	const { user } = useContext(UserContext);
 	const imageStyles = { minWidth: 100, minHeight: 100 };
 
-	const[user, setUser] = useState({
+	/* const[user, setUser] = useState({
     //email: localStorage.getItem('email')
     id: null,
     isAdmin: null,
-    userImageUrl:null
-  })
+    userImageUrl:null 
+  })*/
 
 
 	// State to store the user information stored in the login page
@@ -37,23 +37,23 @@ export default function AppNavbar() {
 	 */
 
 	console.warn('user');
-	console.warn(user);
+	// console.warn(user);
 	// console.warn('appnavbar');
  //        console.warn(user.userImageUrl);
 
 	const token = localStorage.getItem('token');
 
 	/* <img src={userImageUrl} alt="" className="topAvatar" /> */
-          const UserTinyImage = ('{userImageUrl}?auto=compress&cs=tinysrgb&dpr=2&w=500"')
+          // const UserTinyImage = ('{userImageUrl}?auto=compress&cs=tinysrgb&dpr=2&w=500"')
 
 
 
           // console.warn('UserTinyImage')
           // console.warn(UserTinyImage)
 
-	const [userImageUrl, setUserImageUrl] = useState("");
+	// const [userImageUrl, setUserImageUrl] = useState("");
 
-	useEffect(() => {
+	/* useEffect(() => {
     fetch(`${ process.env.REACT_APP_API_URL }/users/details`, {
       headers:{
         Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -93,7 +93,7 @@ export default function AppNavbar() {
     // }, [user])
   }, [])
 
-	console.log(userImageUrl)
+	console.log(userImageUrl) */
 
 	return (
 		<Navbar bg="light" expand="lg">
