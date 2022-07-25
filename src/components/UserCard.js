@@ -87,7 +87,7 @@ const [email, setEmail] = useState("");
 	}, [])
 
 	const updateUser = () => {
-			fetch(`http://localhost:4008/api/users/edit/${_id}`, {
+			fetch(`${ process.env.REACT_APP_API_URL }/users/edit/${_id}`, {
 				method: "PUT",
 				headers: {
 					'Content-Type': 'application/json',
