@@ -12,10 +12,15 @@ export default function ProfileSection() {
 		const [lastName, setLastName] = useState('');
 		const [email, setEmail] = useState('');
 		const [mobileNo, setMobileNo] = useState('');
+		const [address, setAddress] = useState("");
+		const [userImageUrl, setUserImageUrl] = useState("");
 		/* const [streeAddress, setStreetAddress] = useState('');
 		const [city, setCity] = useState(''); */
 		const [isAdmin, setIsAdmin] = useState(false);
 		const token = localStorage.getItem("token");
+
+		const imageStyles = { minWidth: 100, minHeight: 100 };
+
 
 		useEffect(() => {
 			fetch(`${ process.env.REACT_APP_API_URL }/users/`, {
@@ -30,6 +35,10 @@ export default function ProfileSection() {
 				setLastName(data.lastName);
 				setEmail(data.email);
 				setMobileNo(data.mobileNo);
+				setAddress(data.address)
+				setUserImageUrl(data.userImageUrl)
+				// setLoyalty(data.loyalty)
+				setIsAdmin(data.isAdmin)
 				// setIsAdmin(data.isAdmin);
 				/* setStreetAddress(data.address[0].streetAddress);
 				setCity(data.address[0].city); */
@@ -48,7 +57,10 @@ export default function ProfileSection() {
 				body: JSON.stringify({
 					firstName: firstName,
 					lastName: lastName,
-					mobileNo: mobileNo
+					mobileNo: mobileNo,
+					address: address,
+					userImageUrl: userImageUrl
+					
 
 					// address: [{"streetAddress": streeAddress, "city": city}]
 				})
@@ -148,6 +160,23 @@ export default function ProfileSection() {
 				    </div> */}				
 				</div>
 				<div className="row mt-2">
+
+
+					<div>
+				    	<img src={userImageUrl} className="prod-img" styles={imageStyles}/>
+				    </div>
+				    <div className="col-md-6">
+						<p>userImageUrl</p>
+						<TextField
+	          				id="filled-multiline-flexible"
+	          				variant="outlined"
+	          				size="small"
+	          				fullWidth
+							value={userImageUrl}
+							onChange={e => setUserImageUrl(e.target.value)}
+				        />
+				    </div>	
+				
 					{/* <div className="col-md-6">
 						<p>Password</p>
 						<TextField
@@ -173,6 +202,20 @@ export default function ProfileSection() {
 
 				    
 								
+				</div>
+				<div>
+					<div className="col-md-6">
+						<p>Address</p>
+						<TextField
+	          				id="filled-multiline-flexible"
+	          				variant="outlined"
+	          				size="small"
+	          				fullWidth
+							value={address}
+							onChange={e => setAddress(e.target.value)}
+				        />
+				    </div>
+
 				</div>
 
 				

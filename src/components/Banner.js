@@ -24,7 +24,7 @@ export default function Banner(){
 				      src={require('../Images/carouselImage1.jpg')}
 				      alt="First slide"
 				      style={style}
-				      targetURL= "/products"
+				      // targetURL= "/products"
 				    />
 				    
                 

@@ -1,7 +1,7 @@
 //Hook useContext to pass usestate
 import { useState, useEffect, useContext } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { Navigate } from 'react-router-dom'; //use for re-direction
+import { Navigate, Link } from 'react-router-dom'; //use for re-direction
 import Swal from 'sweetalert2';
 import UserContext from '../UserContext';
 // import { Grid, Paper, Avatar, TextField, Typography } from '@material-ui/core';
@@ -260,6 +260,10 @@ export default function Login() {
 
       }
 
+      <br/>
+        <Typography> Not registered? {' '}
+                    <Link className="text-link" to={'/register'}>Create an account</Link>
+                </Typography>
         </Form>
         </Paper>
         </Grid>

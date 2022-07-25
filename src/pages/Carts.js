@@ -122,14 +122,9 @@ export default function Carts() {
 					<div className="d-flex justify-content-between px-3">
 						<div className="d-flex">
 							<img src={product.imgUrl} alt="product" style={imgStyle}/>
-							{/* <img src={imgUrl2} alt="product" style={imgStyle}/> */}
-							{/* <div>
-								<div>{product.name}</div>
-								<p className="gray">PRICE</p>
-								<Badge>QUANTITY</Badge>
-							</div> */}
+							
 						</div>
-						<div className="me-auto center" class="center">
+						<div className="me-auto center" className="center">
 					        <div>
 					          {product.name}{" "}
 					          {product.quantity > 1 && (

@@ -99,10 +99,12 @@ export default function ProductView() {
 		.then(data => {
 
 			console.log(data)
+			console.warn(imgUrl)
 
 			setName(data.name)
 			setDescription(data.description)
 			setPrice(data.price)
+			setImgUrl(data.imgUrl)
 
 
 		})
@@ -111,22 +113,22 @@ export default function ProductView() {
 
 	return (
 
-		<div class="wrapper">
-		      <section class="section-2 target" id="product-items">
+		<div className="wrapper">
+		      <section className="section-2 target" id="product-items">
 		        
-		        <div class="cart-head-view-wrapper center">
-		          <div class="card cart-view-wrapper">
-		            <h2 class="section-name"> </h2>
+		        <div className="cart-head-view-wrapper center">
+		          <div className="card cart-view-wrapper">
+		            <h2 className="section-name"> </h2>
 		            
-		            <img src={require('../Images/cartgif.gif')} class="cart-img center" />
-		            {/* <img src={product.imgUrl} class="cart-img center" /> */}
-		            <h3 class="item-price"> </h3>
+		            {/* <img src={require('../Images/cartgif.gif')} className="cart-img center" /> */}
+		            {/* <img src={data.imgUrl} className="cart-img center" /> */}
+		            <h3 className="item-price"> </h3>
 		            
-					        <Card.Title class="center" >{name}</Card.Title>
-					        <Card.Subtitle class="center">Description:</Card.Subtitle>
-					        <Card.Text class="center">{description}</Card.Text>
-					        <Card.Subtitle class="center">Price:</Card.Subtitle>
-					        <Card.Text class="center"> { formatCurrency(price) }</Card.Text>
+					        <Card.Title className="center" >{name}</Card.Title><br/>
+					        {/* <Card.Subtitle className="center">Description:</Card.Subtitle> */}
+					        <Card.Text className="center">{description}</Card.Text>
+					        <Card.Subtitle className="center">Price:</Card.Subtitle>
+					        <Card.Text className="center"> { formatCurrency(price) }</Card.Text>
 					        
 					        
 					        
@@ -136,11 +138,13 @@ export default function ProductView() {
 
 					        		user.isAdmin !== true ?
 
+							        	<Card.Text className="center">
 							        	<span className="d-flex my-2">
 											<button type="button" className="quantity-btn" onClick={increaseQuantity}>+</button>
 											<p className="quantity-text">{quantity}</p>
 											<button className="quantity-btn" onClick={decreaseQuantity}>-</button>
 										</span>
+										</Card.Text>
 
 										:
 
@@ -172,7 +176,7 @@ export default function ProductView() {
 					        }
 					        
 					    
-		            {/* <button type="button" class="card-btn">RC Planes</button> */}
+		            {/* <button type="button" className="card-btn">RC Planes</button> */}
 		          </div>
 			</div>
 		     </section>

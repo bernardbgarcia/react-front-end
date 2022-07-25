@@ -23,7 +23,7 @@ export default function ProductSectionAdmin({productProp}) {
 	const [imgUrl, setImgUrl] = useState('');
 	
 
-
+	const imageStyles = { minWidth: 100, minHeight: 100 };
 	const { user } = useContext(UserContext);
 	const token = localStorage.getItem('token');
 
@@ -175,6 +175,7 @@ export default function ProductSectionAdmin({productProp}) {
 							value={imgUrl}
 							onChange={e => setImgUrl(e.target.value)}
 				        />
+				        <img src={imgUrl} className="prod-img" styles={imageStyles}/>
 				    </div>
 			    </div>
 				<div className="row mt-2">

@@ -2,7 +2,7 @@
 // import Nav from 'react-bootstrap/Nav';
 // import Container from 'react-bootstrap/Container';
 // import {useState} from 'react';
-import {useContext} from 'react';
+import {useContext, useEffect, useState } from 'react';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import UserContext from '../UserContext';
@@ -16,7 +16,15 @@ import {Form, Button} from 'react-bootstrap';
 // 2 ways to render via function or class
 export default function AppNavbar() {
 
-	const { user } = useContext(UserContext);
+	// const { user } = useContext(UserContext);
+	const imageStyles = { minWidth: 100, minHeight: 100 };
+
+	const[user, setUser] = useState({
+    //email: localStorage.getItem('email')
+    id: null,
+    isAdmin: null,
+    userImageUrl:null
+  })
 
 
 	// State to store the user information stored in the login page
@@ -28,7 +36,64 @@ export default function AppNavbar() {
 	
 	 */
 
-	console.log(user);
+	console.warn('user');
+	console.warn(user);
+	// console.warn('appnavbar');
+ //        console.warn(user.userImageUrl);
+
+	const token = localStorage.getItem('token');
+
+	/* <img src={userImageUrl} alt="" className="topAvatar" /> */
+          const UserTinyImage = ('{userImageUrl}?auto=compress&cs=tinysrgb&dpr=2&w=500"')
+
+
+
+          // console.warn('UserTinyImage')
+          // console.warn(UserTinyImage)
+
+	const [userImageUrl, setUserImageUrl] = useState("");
+
+	useEffect(() => {
+    fetch(`${ process.env.REACT_APP_API_URL }/users/details`, {
+      headers:{
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+
+    })
+    .then(res => res.json())
+    .then(data => {
+
+      if(typeof data._id !== "undefined") {
+
+          
+        console.warn('email');
+        console.warn(data.email);
+        console.warn('userImageUrl');
+        console.warn(data.userImageUrl);
+
+        setUser({
+          id: data._id,
+          isAdmin: data.isAdmin,
+    			userImageUrl: data.userImageUrl
+        })
+
+      } else {
+
+        setUser({
+          id: null,
+          isAdmin: null,
+    			userImageUrl:null
+        })
+
+      }
+
+    })
+
+    //console.log(user)
+    // }, [user])
+  }, [])
+
+	console.log(userImageUrl)
 
 	return (
 		<Navbar bg="light" expand="lg">
@@ -44,7 +109,7 @@ export default function AppNavbar() {
 	            {/* <Nav.Link as={ Link } to="/courses">Courses</Nav.Link> */}
 	            <Nav.Link as={ Link } to="/products" className="navbar-link">Products</Nav.Link>
 	            
-	            <Nav.Link as={ Link } to="/carts" className="navbar-link"><FontAwesomeIcon icon={faShoppingCart} />Cart</Nav.Link>
+	            <Nav.Link as={ Link } to="/carts" className="navbar-link"><FontAwesomeIcon icon={faShoppingCart} /></Nav.Link>
 	            
 	            
 
@@ -68,6 +133,9 @@ export default function AppNavbar() {
 			        	<Nav.Link as={NavLink} to='/dashboard' className="navbar-link">Dashboard</Nav.Link>
 			        	{/* <Nav.Link as={NavLink} to='/addproduct'>Add Product</Nav.Link> */}
 			        	<Nav.Link as={NavLink} to='/logout' className="navbar-link">Sign out</Nav.Link>
+			        	{/* <img src={userImageUrl} alt="" className="topAvatar" /> */}
+			        	{/* <img src={userImageUrl} alt="img" style="max-width: 20px; max-height: 24px"/> */}
+
 			        	{/* <Nav.Link as={NavLink} to='/profilesection'>Account</Nav.Link> */}
 			        	</>
 						:
@@ -77,6 +145,7 @@ export default function AppNavbar() {
 						{/* <Nav.Link as={NavLink} to='/adminpanel'>Admin Panel</Nav.Link> */}
 		            	{/* <Nav.Link as={NavLink} to='/profilesection'>Account</Nav.Link> */}
 						<Nav.Link as={NavLink} to='/logout' className="navbar-link">Sign out</Nav.Link>
+						{/* <img src={userImageUrl} alt="" className="topAvatar" /> */}
 						</>
 					
 
@@ -87,9 +156,10 @@ export default function AppNavbar() {
 	            <Nav.Link as={ Link } to="/login" className="navbar-link">Login</Nav.Link>
 	            
 	            
-	            <Nav.Link as={ Link } to="/register" className="navbar-link">Register</Nav.Link>
+	            {/* <Nav.Link as={ Link } to="/register" className="navbar-link">Register</Nav.Link> */}
 	            {/* <Nav.Link as={ Link } to="/register2">Register2</Nav.Link> */}
 	            </>
+	            
 
 
 
@@ -102,6 +172,7 @@ export default function AppNavbar() {
               className="me-2"
               aria-label="Search"
             />
+            {/* <img src={imgUrl} className="cart-img center" /> */}
             <Button variant="outline-success">Search</Button>
           </Form>
 	           <div className="topRight">
@@ -117,6 +188,10 @@ export default function AppNavbar() {
            
           </div>
           <img src={require('../Images/h-king.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500"')} alt="" className="topAvatar" />
+          {/* <span>{name}</span> */}
+
+
+          
           {/* <img src="https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" className="topAvatar" /> */}
         </div>
 	        </Navbar.Collapse>

@@ -10,9 +10,9 @@ export default function Footer() {
 				Download Our App
 				</p>
 				<div className="input-areas">
-					<div class="app-logo">
-						<img src={require('../Images/play-store.png')} class="footer-img" />
-						<img src={require('../Images/app-store.png')} class="footer-img" />
+					<div className="app-logo">
+						<img src={require('../Images/play-store.png')} className="footer-img" />
+						<img src={require('../Images/app-store.png')} className="footer-img" />
                        
                     </div>
 				</div>

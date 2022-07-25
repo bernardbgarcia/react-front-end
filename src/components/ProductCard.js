@@ -1,27 +1,23 @@
 //import { useState, useEffect } from 'react';
 // import {Row, Col, Card, Button} from 'react-bootstrap';
-import {Card, Button} from 'react-bootstrap';
+import {Card, Button, Badge} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import imgUrl2 from '../Images/default.jpg';
 import './ProductCard.css';
 import { formatCurrency } from "../utilities/formatCurrency";
-const imageStyles = { minWidth: 100, minHeight: 100 };
-// import Images from '../Images';
-//app.use('/uploads',express.static('uploads'))
 
-// export default function CourseCard(props) {
-//export default function CourseCard({courseProp}) {
+
 export default function ProductCard({productProp}) {
 
-	
+	const imageStyles = { minWidth: 100, minHeight: 100 };	
 
 
 
 	// Deconstruct the course properties into their own variables
-	const { name, description, price, _id, imgUrl } = productProp;
-	console.log(productProp);
-	console.log('imgUrl');
-	console.log(imgUrl);
+	const { name, description, price, _id, imgUrl, isActive } = productProp;
+	console.warn(productProp);
+	console.warn('isActive');
+	console.warn(isActive);
 
 
 
@@ -38,9 +34,9 @@ export default function ProductCard({productProp}) {
 		<div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: 50 }}>
 
     		<div>
-    		<h3 class="item-price"> {name}</h3>
-    		<h3 class="item-price"> {imgUrl}</h3>
-            	<h3 class="item-price"> Description:<br/> {description}</h3>
+    		<h3 className="item-price"> {name}</h3>
+    		<h3 className="item-price"> {imgUrl}</h3>
+            	<h3 className="item-price"> Description:<br/> {description}</h3>
             	<hr/>
             	</div>
             	<div className="center">
@@ -48,31 +44,35 @@ export default function ProductCard({productProp}) {
 
 	            
 	            <img src={imgUrl} className="prod-img" styles={imageStyles}/>
-	            {/* <img src = {`../Images/${imgUrl}`} class="card-img" /> */}
+	            {/* <img src = {`../Images/${imgUrl}`} className="card-img" /> */}
 	            </div>
-    		<div><h3 class="item-price"> Price:<br/> {formatCurrency(price)}</h3>
+    		<div>
+    		<Badge className="badge-stock" bg = "light" text = "dark" > {isActive ? 'In Stock' : 'Out of Stock'} </Badge>
+            <h3 className="item-price"> Price:<br/> {formatCurrency(price)}</h3>
             	<Button variant="primary" as={Link} to={`/api/products/${_id}`}>Details</Button></div>
 
   		</div>
 
-		/* <div class="wrapper">
-      <section class="section-2 target" id="popular-cars">
-        <h1 class="section-heading"> </h1>
-        <div class="cards-wrapper center">
-          <div class="cardc">
-            <h2 class="section-name">{name} </h2>
+
+
+		/* <div className="wrapper">
+      <section className="section-2 target" id="popular-cars">
+        <h1 className="section-heading"> </h1>
+        <div className="cards-wrapper center">
+          <div className="cardc">
+            <h2 className="section-name">{name} </h2>
             
-            <img src={require('../Images/category-1.jpg')} class="card-img" />
+            <img src={require('../Images/category-1.jpg')} className="card-img" />
             
           </div>
-          <div class="cardc">
-            <h2 class="section-name">  </h2>
-            <h3 class="item-price"> Description:<br/> {description}</h3>
+          <div className="cardc">
+            <h2 className="section-name">  </h2>
+            <h3 className="item-price"> Description:<br/> {description}</h3>
           </div>
-          <div class="cardc">
-            <h2 class="section-name"> </h2>
+          <div className="cardc">
+            <h2 className="section-name"> </h2>
             
-            <h3 class="item-price"> Price:<br/>
+            <h3 className="item-price"> Price:<br/>
 				          {formatCurrency(price)}</h3>
             <Button variant="primary" as={Link} to={`/api/products/${_id}`}>Details</Button>
           </div>

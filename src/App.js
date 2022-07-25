@@ -42,7 +42,8 @@ function App() {
   const[user, setUser] = useState({
     //email: localStorage.getItem('email')
     id: null,
-    isAdmin: null
+    isAdmin: null,
+    userImageUrl:null
   })
 
   // Function for clearing localStorage on logout
@@ -64,12 +65,15 @@ function App() {
       if(typeof data._id !== "undefined") {
 
           
-        console.warn('email');
-        console.warn(data.email);
+        // console.warn('email');
+        // console.warn(data.email);
+        // console.warn('userImageUrl');
+        // console.warn(data.userImageUrl);
 
         setUser({
           id: data._id,
-          isAdmin: data.isAdmin
+          isAdmin: data.isAdmin,
+          userImageUrl: data.userImageUrl
         })
 
       } else {

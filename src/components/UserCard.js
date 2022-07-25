@@ -15,6 +15,10 @@ export default function UserCard({userProp}) {
 	// const { name, description, price, _id } = productProp;
 	const { _id } = userProp;
 
+	const imageStyles = { minWidth: 100, minHeight: 100 };
+	// const imageStyles = { minWidth: 20, minHeight: 24 };
+	
+
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	// const [password2, setPassword2] = useState("");
@@ -197,7 +201,9 @@ const [email, setEmail] = useState("");
 							value={mobileNo}
 							onChange={e => setmobileNo(e.target.value)}
 				        />
-				    </div>	
+				    </div>
+				    
+				    
 
 
 				    		
@@ -259,6 +265,12 @@ const [email, setEmail] = useState("");
 							onChange={e => setIsAdmin(e.target.value)}
 				        />
 				    </div>		
+				</div>
+				<div>
+					<div>
+				    	<img src={userImageUrl} className="prod-img" styles={imageStyles}/>
+				    	{/* <img src={userImageUrl} className="prod-img" styles={imageStyles}/> */}
+				    </div>	
 				</div>
 
 				<div className="row mt-2">

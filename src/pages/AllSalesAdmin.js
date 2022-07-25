@@ -56,29 +56,29 @@ export default function AllSalesAdmin({user}) {
 		<div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: 50 }}>
 
     		<div>
-    		<h3 class="item-price"> Order ID:</h3>
-    		<h3 class="item-price"> {product._id}</h3>
-    		<h3 class="item-price"> User ID:</h3>
-    		<h3 class="item-price"> {product.userId}</h3>
-    		<h3 class="item-price"> Products:</h3>
-    		<h3 class="item-price"> {product.name}</h3>
+    		<h3 className="item-price"> Order ID:</h3>
+    		<h3 className="item-price"> {product._id}</h3>
+    		<h3 className="item-price"> User ID:</h3>
+    		<h3 className="item-price"> {product.userId}</h3>
+    		<h3 className="item-price"> Products:</h3>
+    		<h3 className="item-price"> {product.name}</h3>
     		
     		
-            	{/* <h3 class="item-price"> Description:<br/> {product.description}</h3> */}
+            	{/* <h3 className="item-price"> Description:<br/> {product.description}</h3> */}
             	<hr/>
             	</div>
             	<div>
     			
 
 	            
-	            {/* <img src={imgUrl} class="card-img" />
-	            <img src = {`../Images/${imgUrl}`} class="card-img" /> */}
+	            {/* <img src={imgUrl} className="card-img" />
+	            <img src = {`../Images/${imgUrl}`} className="card-img" /> */}
 	            </div>
 	    		<div>
-		    		<h3 class="item-price"> Amount:</h3>
-		    		<h3 class="item-price"> {formatCurrency(product.total)}</h3>
-		    		<h3 class="item-price"> purchasedOn:</h3>
-		    		<h3 class="item-price"> {product.purchasedOn.substring(0, 10)}</h3>
+		    		<h3 className="item-price"> Amount:</h3>
+		    		<h3 className="item-price"> {formatCurrency(product.total)}</h3>
+		    		<h3 className="item-price"> purchasedOn:</h3>
+		    		<h3 className="item-price"> {product.purchasedOn.substring(0, 10)}</h3>
             	</div>
 
   		</div>
