@@ -242,14 +242,16 @@ export default function Login() {
       
       {
       	isActive ?
-	      	<Button variant="primary" type="submit" id="submitBtn">
+        <Grid align='center'>
+	      	<Button className="btn-1 center" variant="primary" type="submit" id="submitBtn">
 	        Submit
 	      	</Button>
+         </Grid>
       	:
 	      
         <Grid align='center'>
                     
-            <Button className="btn-1" variant="danger" type="submit" id="submitBtn" disabled>
+            <Button className="btn-1 center" variant="danger" type="submit" id="submitBtn" disabled>
             Submit
           </Button>
         </Grid>
