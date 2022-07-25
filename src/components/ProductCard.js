@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import imgUrl2 from '../Images/default.jpg';
 import './ProductCard.css';
 import { formatCurrency } from "../utilities/formatCurrency";
+const imageStyles = { minWidth: 100, minHeight: 100 };
 // import Images from '../Images';
 //app.use('/uploads',express.static('uploads'))
 
@@ -38,16 +39,16 @@ export default function ProductCard({productProp}) {
 
     		<div>
     		<h3 class="item-price"> {name}</h3>
-    		{/* <h3 class="item-price"> {imgUrl}</h3> */}
+    		<h3 class="item-price"> {imgUrl}</h3>
             	<h3 class="item-price"> Description:<br/> {description}</h3>
             	<hr/>
             	</div>
-            	<div>
+            	<div className="center">
     			
 
 	            
-	            {/* <img src={imgUrl} class="card-img" />
-	            <img src = {`../Images/${imgUrl}`} class="card-img" /> */}
+	            <img src={imgUrl} className="prod-img" styles={imageStyles}/>
+	            {/* <img src = {`../Images/${imgUrl}`} class="card-img" /> */}
 	            </div>
     		<div><h3 class="item-price"> Price:<br/> {formatCurrency(price)}</h3>
             	<Button variant="primary" as={Link} to={`/api/products/${_id}`}>Details</Button></div>

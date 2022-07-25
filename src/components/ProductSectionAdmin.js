@@ -52,7 +52,7 @@ export default function ProductSectionAdmin({productProp}) {
 	}, [])
 
 	const updateProduct = () => {
-			fetch(`http://localhost:4008/api/products/edit/${_id}`, {
+			fetch(`${ process.env.REACT_APP_API_URL }/products/edit/${_id}`, {
 				method: "PUT",
 				headers: {
 					'Content-Type': 'application/json',
@@ -103,7 +103,8 @@ export default function ProductSectionAdmin({productProp}) {
 
         <div>
 			<div className="profile-wrapper2">
-				<span className="header1">Product Details</span>
+				<span className="header1">Product Details </span>
+				
 				<span className="email-display">{name}</span> {' '}
 				<div className="row mt-3">
 					<div className="col-md-12">
@@ -181,6 +182,7 @@ export default function ProductSectionAdmin({productProp}) {
 				</div> 
 
 				<button className="btn btn-success mt-3 custom-size" onClick={() => updateProduct()}>Save Changes</button>
+				<hr/>
 			</div>
 		</div>
 

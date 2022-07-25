@@ -121,8 +121,8 @@ export default function Carts() {
 				<div className="col-md-6 mx-auto" key={product.productId}>
 					<div className="d-flex justify-content-between px-3">
 						<div className="d-flex">
-							{/* <img src={product.imgUrl} alt="product" style={imgStyle}/> */}
-							<img src={imgUrl2} alt="product" style={imgStyle}/>
+							<img src={product.imgUrl} alt="product" style={imgStyle}/>
+							{/* <img src={imgUrl2} alt="product" style={imgStyle}/> */}
 							{/* <div>
 								<div>{product.name}</div>
 								<p className="gray">PRICE</p>

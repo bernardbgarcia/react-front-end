@@ -26,6 +26,7 @@ export default function ProductView() {
 	const [description, setDescription] = useState("");
 	const [price, setPrice] = useState(0);
 	const [subTotal, setSubTotal] = useState(0);
+	const [imgUrl, setImgUrl] = useState(0);
 
 	const [quantity, setQuantity] = useState(1);
 
@@ -118,6 +119,7 @@ export default function ProductView() {
 		            <h2 class="section-name"> </h2>
 		            
 		            <img src={require('../Images/cartgif.gif')} class="cart-img center" />
+		            {/* <img src={product.imgUrl} class="cart-img center" /> */}
 		            <h3 class="item-price"> </h3>
 		            
 					        <Card.Title class="center" >{name}</Card.Title>
