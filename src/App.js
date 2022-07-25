@@ -28,6 +28,7 @@ import AdminPanel from './pages/AdminPanel';
 import ProfileSection from './components/ProfileSection';
 import ProductSectionAdmin from './components/ProductSectionAdmin';
 import Logout from './pages/Logout';
+import Footer from './components/Footer';
 //import Error404 from './pages/Error404';
 import ErrorPage from './pages/ErrorPage';
 import './App.css';
@@ -117,8 +118,10 @@ function App() {
         
         <Route path="*" element={<ErrorPage/>} />
       </Routes>
+      <Footer/>
       </Container>
     </Router>
+
     </UserProvider>
 
 

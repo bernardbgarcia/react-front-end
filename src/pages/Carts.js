@@ -129,7 +129,7 @@ export default function Carts() {
 								<Badge>QUANTITY</Badge>
 							</div> */}
 						</div>
-						<div className="me-auto">
+						<div className="me-auto center" class="center">
 					        <div>
 					          {product.name}{" "}
 					          {product.quantity > 1 && (

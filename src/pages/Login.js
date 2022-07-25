@@ -168,7 +168,7 @@ export default function Login() {
     return (
 
     (user.id !== null) ?
-    <Navigate to="/products" />
+    <Navigate to="/" />
     	
     	:
 

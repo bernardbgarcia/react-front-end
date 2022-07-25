@@ -34,10 +34,10 @@ export default function AppNavbar() {
 		<Navbar bg="light" expand="lg">
 	      <Container>
 	      	{/* as - serves as anchor tag */}
-	        <Navbar.Brand as={ Link } to="/">Best Games Hobby Store</Navbar.Brand>
+	        <Navbar.Brand as={ Link } to="/" className="navbar-brand">Best Games Hobby Store</Navbar.Brand>
 	        <Navbar.Toggle aria-controls="basic-navbar-nav" />
 	        <Navbar.Collapse id="basic-navbar-nav">
-	          <Nav className="me-auto">
+	          <Nav className="me-auto navbar-links">
 	            {/* <Nav.Link href="#home">Home</Nav.Link> */}
 	            <Nav.Link as={ Link } to="/" className="navbar-link">Home</Nav.Link>
 	            {/* <Nav.Link href="#courses">Courses</Nav.Link> */}

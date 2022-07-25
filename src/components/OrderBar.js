@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-// import './OrderBar.css';
+import './OrderBar.css';
 import React from 'react';
 import { formatCurrency } from "../utilities/formatCurrency";
 

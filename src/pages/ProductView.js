@@ -110,18 +110,23 @@ export default function ProductView() {
 
 	return (
 
-		<Container className="mt-3">
-			<Row>
-				<Col lg={{span:6, offset:3}}>
-					<Card>
-					    <Card.Body className="text-center">
-					        <Card.Title>{name}</Card.Title>
-					        <Card.Subtitle>Description:</Card.Subtitle>
-					        <Card.Text>{description}</Card.Text>
-					        <Card.Subtitle>Price:</Card.Subtitle>
-					        <Card.Text> { formatCurrency(price) }</Card.Text>
+		<div class="wrapper">
+		      <section class="section-2 target" id="product-items">
+		        
+		        <div class="cart-head-view-wrapper center">
+		          <div class="card cart-view-wrapper">
+		            <h2 class="section-name"> </h2>
+		            
+		            <img src={require('../Images/cartgif.gif')} class="cart-img center" />
+		            <h3 class="item-price"> </h3>
+		            
+					        <Card.Title class="center" >{name}</Card.Title>
+					        <Card.Subtitle class="center">Description:</Card.Subtitle>
+					        <Card.Text class="center">{description}</Card.Text>
+					        <Card.Subtitle class="center">Price:</Card.Subtitle>
+					        <Card.Text class="center"> { formatCurrency(price) }</Card.Text>
 					        
-					        {/* <Card.Text>PRODUCT VIEW PAGE</Card.Text> */}
+					        
 					        
 
 					        {
@@ -145,11 +150,68 @@ export default function ProductView() {
 
 					        }
 
-					        {/* <span className="d-flex my-2">
-								<button type="button" className="quantity-btn" onClick={increaseQuantity}>+</button>
-								<p className="quantity-text">{quantity}</p>
-								<button className="quantity-btn" onClick={decreaseQuantity}>-</button>
-							</span> */}
+					      
+
+					        {
+					        	user.id !== null ?
+
+					        		user.isAdmin !== true ?
+
+					        			<Button variant="primary" onClick={() => enroll(productId, quantity)}>Add to Cart</Button>
+
+					        			:
+
+					        			<Link className="btn btn-danger card-btn" to="/"> Home </Link>
+
+					        	:
+
+					        	<Link className="btn btn-danger card-btn" to="/login"> Log in to Shop </Link>
+
+					        }
+					        
+					    
+		            {/* <button type="button" class="card-btn">RC Planes</button> */}
+		          </div>
+			</div>
+		     </section>
+		</div>
+
+		/* <Container className="mt-3">
+			<Row>
+				<Col lg={{span:6, offset:3}}>
+					<Card>
+					    <Card.Body className="text-center">
+					        <Card.Title>{name}</Card.Title>
+					        <Card.Subtitle>Description:</Card.Subtitle>
+					        <Card.Text>{description}</Card.Text>
+					        <Card.Subtitle>Price:</Card.Subtitle>
+					        <Card.Text> { formatCurrency(price) }</Card.Text>
+					        
+					        
+					        
+
+					        {
+					        	user.id !== null ?
+
+					        		user.isAdmin !== true ?
+
+							        	<span className="d-flex my-2">
+											<button type="button" className="quantity-btn" onClick={increaseQuantity}>+</button>
+											<p className="quantity-text">{quantity}</p>
+											<button className="quantity-btn" onClick={decreaseQuantity}>-</button>
+										</span>
+
+										:
+
+										<span></span>
+
+					        	:
+
+					        	<span></span>
+
+					        }
+
+					      
 
 					        {
 					        	user.id !== null ?
@@ -172,7 +234,7 @@ export default function ProductView() {
 					</Card>
 				 </Col>
 			</Row>
-		</Container>
+		</Container> */
 
 
 		)

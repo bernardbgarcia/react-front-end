@@ -7,6 +7,11 @@
   justify-content: space-between;
 }
 
+/*nav{
+  flex:  1;
+  text-align: right;
+}*/
+
 .logo {
   font-weight: bold;
   font-size: 30px;
@@ -56,11 +61,17 @@
 }*/
 
 .navbar-link {
-  font-size: 1rem;
+  font-size: 1.5rem;
   display: inline-block;
-  /*margin: 0 3rem;*/
-  /*color: var(--black-color);*/
+  margin: 0 1rem;
+  color: #52616B;
   transition: transform 0.5s;
+}
+.navbar-brand{
+  font-size: 1.5rem;
+  display: inline-block;
+  margin: 0 1rem;
+  color: #52616B; 
 }
 
 .navbar-link:hover {
