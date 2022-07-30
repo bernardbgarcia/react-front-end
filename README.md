@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+This is an individual capstone 3 project for Batch189 Zuitt Fullstack Web development course. This is an contineous ongoing project to slowly improve the project.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is the react front end of the capstone 2 API E-Commerce Capstone 2.
 
-## Available Scripts
+Below are used for this project: - react.js - fetch - react bootstrap - netlify - gitlab - github - sublime
 
-In the project directory, you can run:
+This project were made with limited amount of time before the submission, between 3 to 5 days including the weekend extension.
 
-### `npm start`
+Project demo is on this link - https://bestgameshobbystore.netlify.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Challenges and experiences doing this project: - I mistakenly force installed a NPM package that break the project which require me to create a new react project then restore the js files. - limited time to do better front end presentation and optimize code.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The project are deployed using netlify following some production deployment practices.
 
-### `npm test`
+Special Thanks to the following: - Ms. Miah - Zuitt Bootcamp's dedicated instructors - Sir Earl - Zuitt Bootcamp's dedicated instructors - Batch 189 classmates - uncle google - dev communities
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Below are the requirements for the capstone 3:
 
-### `npm run build`
+Requirements:
+1. Registration Page 
+   - A Registration Page with proper form validation (all fields must be filled and passwords must match) 
+   that must redirect the user to the login page once successfully submitted.
+2. Login Page
+   - A Login Page that must redirect the user to the either the home page or the products catalog 
+   once successfully authenticated
+3. Product Catalog  
+   - A Product Catalog page that must show all products currently available (unavailable/inactive products must not be shown) 
+   and allow users to visit individual product pages
+4. Specific Product Page
+   - A Specific Product page that must show all relevant product information, with a feature to allow only logged-in users to 
+   add any quantity of the product to their cart or make an order
+5. Order Page
+   - An Order History page where the currently logged-in user can see all records of their own previously-placed orders
+6. Admin/Dashboard
+   - An Admin Panel/Dashboard with the following features:
+      - Retrieve list of all products (available or unavailable)
+      - Create new product
+      - Update product information
+      - Deactivate/reactivate product
+7. Other Requirements:
+    - A fully-functioning Navbar with proper dynamic rendering (Register/Login links for users not logged in, 
+    Logout link for users who are, etc)
+    - App must be single-page and utilize proper routing (no navigating to another page/reloading)
+    - Registration/Login pages must be inaccessible to users who are logged-in
+    - Apart from users who are not logged-in, Admin must not be able to add products to their cart
+    - Do not create a website other than the required e-commerce app
+    - Do not use templates found in other sites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Stretch Goals:
+  - Full responsiveness across mobile/tablet/desktop screen sizes
+  - Product images
+  - A hot products/featured products section
+  - Admin feature to retrieve a list of all orders made by all users
+  - Cart View
+     A Cart View page with the following features:
+      - Show all items the user has added to their cart (and their quantities)
+      - Change product quantities
+      - Remove products from cart
+      - Subtotal for each item
+      - Total price for all items
+      - A working checkout button/functionality.
+      - When the user checks their cart out, redirect them to either the homepage or the Order History page
