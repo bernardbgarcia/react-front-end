@@ -1,4 +1,3 @@
-// import './ProfileSection.css'
 import { useState, useEffect } from 'react';
 import { TextField } from '@material-ui/core';
 import Swal from 'sweetalert2';
@@ -10,8 +9,6 @@ export default function ProfileSection() {
 		const [lastName, setLastName] = useState('');
 		const [email, setEmail] = useState('');
 		const [mobileNo, setMobileNo] = useState('');
-		/* const [streeAddress, setStreetAddress] = useState('');
-		const [city, setCity] = useState(''); */
 		const [isAdmin, setIsAdmin] = useState(false);
 		const token = localStorage.getItem("token");
 
@@ -29,8 +26,6 @@ export default function ProfileSection() {
 				setEmail(data.email);
 				setMobileNo(data.mobileNo);
 				setIsAdmin(data.isAdmin);
-				/* setStreetAddress(data.address[0].streetAddress);
-				setCity(data.address[0].city); */
 			})
 		}, [token]);
 
@@ -45,7 +40,6 @@ export default function ProfileSection() {
 					firstName: firstName,
 					lastName: lastName,
 					mobileNo: mobileNo
-					// address: [{"streetAddress": streeAddress, "city": city}]
 				})
 			})
 			.then(res => res.json())
@@ -123,35 +117,12 @@ export default function ProfileSection() {
 							onChange={e => password(e.target.value)}
 				        />
 				    </div>	
-				    {/* <div className="col-md-6">
-						<p>Street Address</p>
-						<TextField
-	          				id="filled-multiline-flexible"
-	          				variant="outlined"
-	          				size="small"
-							value={streeAddress}
-							onChange={e => setStreetAddress(e.target.value)}
-				          	fullWidth
-				        />
-				    </div> */}				
 				</div>
 				<div className="row mt-2">
-					{/* <div className="col-md-6">
-						<p>City</p>
-						<TextField
-	          				id="filled-multiline-flexible"
-	          				variant="outlined"
-	          				size="small"
-	          				fullWidth
-							value={city}
-							onChange={e => setCity(e.target.value)}
-				        />
-				    </div> */}				
 				</div>
 				<button className="btn btn-success mt-3 custom-size" onClick={() => updateUserDetails()}>Save Changes</button>
 			</div>
 		</div>
-
 	)
 }
 

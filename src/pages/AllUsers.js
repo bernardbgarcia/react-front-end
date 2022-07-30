@@ -14,14 +14,10 @@
  */
 
 import {Fragment, useEffect, useState, useContext} from 'react';
-// import ProductCard from '../components/ProductCard';
 import UserCard from '../components/UserCard';
-// import ProductCard2 from '../components/ProductCard2';
 import UserContext from '../UserContext';
 
 export default function AllUsers() {
-
-	
 
 	const [users, setUsers] = useState([])
 
@@ -54,9 +50,6 @@ export default function AllUsers() {
 		})
 
 	}, [])
-
-
-
 
 	return(
 

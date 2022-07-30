@@ -13,28 +13,10 @@ export default function UserView() {
 
 	// the "useParams" 
 	const {userId} = useParams()
-
-
 	const [firstName, setfirstName] = useState("");
 	const [lastName, setlastName] = useState("");
 	const [email, setemail] = useState("");
-	// const [isAdmin, setisAdmin] = useState("");
 	const [mobileNo, setmobileNo] = useState(0);
-
-	// const [quantity, setQuantity] = useState(1);
-
-	/* const increaseQuantity = () => {
-		setQuantity(quantity + 1);
-	}
-
-	const decreaseQuantity = () => {
-		if(quantity > 1) {
-			setQuantity(quantity - 1);
-		}
-	} */
-
-
-	
 
 	useEffect(() => {
 		console.log(userId)
@@ -50,8 +32,6 @@ export default function UserView() {
 			setemail(data.email)
 			setmobileNo(data.mobileNo)
 			
-
-
 		})
 
 	}, [userId])
@@ -64,19 +44,14 @@ export default function UserView() {
 					<Card>
 					    <Card.Body className="text-center">
 					        <Card.Title>Profile</Card.Title>
-					        
 					        <Card.Text>{firstName}</Card.Text>
 					        <Card.Text>{lastName}</Card.Text>
 					        <Card.Text>{email}</Card.Text>
 					        <Card.Text>{mobileNo}</Card.Text>
-					        
 					        <Card.Text>PRODUCT VIEW PAGE</Card.Text>
 					        
-
-					        {
+							{
 					        	user.id !== null ?
-
-					        	/* <Button variant="primary" onClick={() => enroll(productId, quantity)}>Order</Button> */
 
 					        	:
 
@@ -90,9 +65,6 @@ export default function UserView() {
 			</Row>
 		</Container>
 
-
-		)
-
-
+	)
 
 }

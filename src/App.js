@@ -1,13 +1,10 @@
 import {useState, useEffect} from 'react';
-// import { Fragment} from 'react'; or using - import Container from 'react-bootstrap/container';
 import {Container} from 'react-bootstrap';
 // BrowserRouter is assigned to Router for shortername. BrowserRouter wraps all the routes. 
 import {BrowserRouter as Router} from 'react-router-dom';
 import {Routes, Route} from 'react-router-dom'
 import AppNavbar from './components/AppNavbar';
 import ImageUpload from './components/ImageUpload';
-// import Banner from './components/Banner';
-// import Highlights from './components/Highlights';
 import Courses from './pages/Courses';
 import Products from './pages/Products';
 import AllProductsAdmin from './pages/AllProductsAdmin';
@@ -17,11 +14,10 @@ import CourseView from './pages/CourseView';
 import ProductView from './pages/ProductView';
 import ProductEdit from './pages/ProductEdit';
 import ProductView2 from './pages/ProductView2';
-// import AdminView from './pages/AdminView';
 import Home from './pages/Home';
 import Register from './pages/Register';
 import AddProduct from './pages/AddProduct';
-import Register2 from './pages/Register2';
+// import Register2 from './pages/Register2';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import AdminPanel from './pages/AdminPanel';
@@ -29,7 +25,6 @@ import ProfileSection from './components/ProfileSection';
 import ProductSectionAdmin from './components/ProductSectionAdmin';
 import Logout from './pages/Logout';
 import Footer from './components/Footer';
-//import Error404 from './pages/Error404';
 import ErrorPage from './pages/ErrorPage';
 import './App.css';
 import { UserProvider } from './UserContext';
@@ -51,7 +46,7 @@ function App() {
     localStorage.clear();
   }
 
-  // 
+  
   useEffect(() => {
     fetch(`${ process.env.REACT_APP_API_URL }/users/details`, {
       headers:{
@@ -65,12 +60,7 @@ function App() {
       if(typeof data._id !== "undefined") {
 
           
-        // console.warn('email');
-        // console.warn(data.email);
-        // console.warn('userImageUrl');
-        // console.warn(data.userImageUrl);
-
-        setUser({
+      setUser({
           id: data._id,
           isAdmin: data.isAdmin,
           userImageUrl: data.userImageUrl
@@ -87,8 +77,6 @@ function App() {
 
     })
 
-    //console.log(user)
-    // }, [user])
   }, [])
 
   return (
@@ -114,12 +102,9 @@ function App() {
         <Route path="/profilesection" element={<ProfileSection/>} />
         <Route path="/productsectionadmin" element={<ProductSectionAdmin/>} />
         <Route path="/imageupload" element={<ImageUpload/>} />
-        {/* <Route path="/adminview" element={<AdminView/>} /> */}
         <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<Register/>} />
         <Route path="/addproduct" element={<AddProduct/>} />
-        <Route path="/register2" element={<Register2/>} />
-        
         <Route path="*" element={<ErrorPage/>} />
       </Routes>
       <Footer/>

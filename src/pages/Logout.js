@@ -31,8 +31,7 @@ export default function Logout() {
 			<>
 			<Navigate to="/" />
 			</>
-			/* <Redirect to="/" /> */
-
+			
 		)
 
 }

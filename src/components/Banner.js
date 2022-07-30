@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import { Row, Col, Container, Carousel } from 'react-bootstrap';
 import Image from "react-bootstrap/Image";
-// import Button from './Button';
 import Button from './Button';
 
 export default function Banner(){
@@ -24,7 +23,6 @@ export default function Banner(){
 				      src={require('../Images/carouselImage1.jpg')}
 				      alt="First slide"
 				      style={style}
-				      // targetURL= "/products"
 				    />
 				    
                 

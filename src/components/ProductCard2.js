@@ -6,22 +6,10 @@ import './ProductCard2.css';
 import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-/* export default function ProductCard2({productProp}) { */
-
-
 export default function ProductCard2({description, name, price, productId, _id, onClick, cartUrl}) {
-
-	/* const { name, description, price, _id, productId, cartUrl, onClick } = productProp; */
-
-	
-
-	
-
-
 
 	const { user } = useContext(UserContext);
 	const [quantity, setQuantity] = useState(1);
-
 	const increaseQuantity = () => {
 		setQuantity(quantity + 1);
 	}
@@ -32,13 +20,10 @@ export default function ProductCard2({description, name, price, productId, _id, 
 		}
 	}
 
-
-
 	return (
 		<div className="display-container">
 			<div className="photo-container">
-				{/* <img src={cartUrl} alt="Image1" className="product-img"/> */}
-			</div>
+				</div>
 			<div className="info-container">
 				<h2>PRODUCT CARD 2</h2>
 				<h2>{name}</h2>

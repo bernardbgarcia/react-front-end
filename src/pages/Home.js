@@ -1,7 +1,5 @@
 import Banner from '../components/Banner';
-// import LandingPage from '../components/LandingPage';
 import Highlights from '../components/Highlights';
-/* import CourseCard from '../components/CourseCard'; */
 
 export default function Home() {
 
@@ -16,7 +14,7 @@ export default function Home() {
 			<>
 				<Banner data={data}/>
 				<Highlights/>
-				{/* <CourseCard/> */}
+				
 
 			</>
 

@@ -20,9 +20,6 @@ export default function Dashboard() {
 	  			<Tab eventKey="profile" title="Account">
 	  				<ProfileSection/>
 	  			</Tab>
-	  			{/* <Tab eventKey="profile" title="Account">
-	  				<ChangePassword/>
-	  			</Tab> */}
 	  			<Tab eventKey="dash" title="Dash">
 	  				Dashboard
 	  			</Tab>

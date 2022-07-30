@@ -52,10 +52,7 @@ export default function Dashboard() {
 	  			<Tab eventKey="Account" title="Account">
 	  				<ProfileSection/>
 	  			</Tab>
-	  			{/* <Tab eventKey="profile" title="Account">
-	  				<ChangePassword/>
-	  			</Tab> */}
-			  	
+	  						  	
 			  	<Tab eventKey="loyalty" title={user.isAdmin ? "Orders" : "Loyalty Program"}>
 			  		
 			  	</Tab>

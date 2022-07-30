@@ -1,6 +1,4 @@
-// import './ProfileSection.css'
 import { useState, useEffect } from 'react';
-// import { TextField } from '@material-ui/core';
 import { TextField } from '@mui/material';
 import { Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
@@ -14,8 +12,6 @@ export default function ProfileSection() {
 		const [mobileNo, setMobileNo] = useState('');
 		const [address, setAddress] = useState("");
 		const [userImageUrl, setUserImageUrl] = useState("");
-		/* const [streeAddress, setStreetAddress] = useState('');
-		const [city, setCity] = useState(''); */
 		const [isAdmin, setIsAdmin] = useState(false);
 		const token = localStorage.getItem("token");
 
@@ -37,11 +33,8 @@ export default function ProfileSection() {
 				setMobileNo(data.mobileNo);
 				setAddress(data.address)
 				setUserImageUrl(data.userImageUrl)
-				// setLoyalty(data.loyalty)
 				setIsAdmin(data.isAdmin)
-				// setIsAdmin(data.isAdmin);
-				/* setStreetAddress(data.address[0].streetAddress);
-				setCity(data.address[0].city); */
+				
 			})
 		}, [token]);
 
@@ -176,32 +169,6 @@ export default function ProfileSection() {
 							onChange={e => setUserImageUrl(e.target.value)}
 				        />
 				    </div>	
-				
-					{/* <div className="col-md-6">
-						<p>Password</p>
-						<TextField
-	          				id="filled-multiline-flexible"
-	          				variant="outlined"
-	          				size="small"
-	          				fullWidth
-							value={password1}
-							onChange={e => setPassword1(e.target.value)}
-				        />
-				    </div>
-				    <div className="col-md-6">
-						<p>Repeat Password</p>
-						<TextField
-	          				id="filled-multiline-flexible"
-	          				variant="outlined"
-	          				size="small"
-	          				fullWidth
-							value={password2}
-							onChange={e => setPassword2(e.target.value)}
-				        />
-				    </div> */}
-
-				    
-								
 				</div>
 				<div>
 					<div className="col-md-6">
@@ -218,21 +185,9 @@ export default function ProfileSection() {
 
 				</div>
 
-				
-
 				<button className="btn btn-success mt-3 custom-size" onClick={() => updateUserDetails()}>Save Changes</button>
 
-				{/* {
-      	isActive ?
-	      	<Button variant="primary" type="submit" id="submitBtn">
-	        Submit
-	      	</Button>
-      	:
-	      <Button variant="danger" type="submit" id="submitBtn" disabled>
-	        Submit
-	      </Button>
-
-      } */}
+				
 					
 			</div>
 		</div>

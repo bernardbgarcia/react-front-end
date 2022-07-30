@@ -2,38 +2,24 @@
 import { useState, useEffect, useContext } from 'react';
 import {Form, Button } from 'react-bootstrap';
 import { Navigate, useNavigate } from 'react-router-dom';
-//ACTIVITY CODE s54 start
 import UserContext from '../UserContext';
 import Swal from 'sweetalert2';
 //import { useContext } from 'react';
-//ACTIVITY CODE s54 end
+
 
 export default function Register() {
 
 	// state hooks to store the values of the input fields
 	
-
 	const [email, setEmail] = useState("");
 	const [password1, setPassword1] = useState("");
 	const [password2, setPassword2] = useState("");
-	
-
-
 	const [firstName, setfirstName] = useState("");
 	const [lastName, setlastName] = useState("");
 	const [mobileNo, setmobileNo] = useState("");
-
 	const navigate = useNavigate();
-
-	
-
-
 	// State to determine whether the submit button is enabled or not
 	const [isActive, setIsActive] = useState(false);
-
-	/* console.log(email);
-	console.log(password1);
-	console.log(password2); */
 
 	function registerUser(e) {
 
@@ -90,16 +76,9 @@ export default function Register() {
 		        			text: "You may now log in."
 		        		})
 
-
-
-		        		setEmail("");
+								setEmail("");
 								setPassword1("");
 								setPassword2("");
-								
-								// setName("");
-
-							
-
 								setfirstName("");
 								setlastName("");
 								setmobileNo("");
@@ -122,45 +101,7 @@ export default function Register() {
 
 
 		})
-
-
-		/* setEmail("");
-		setPassword1("");
-		setPassword2("");
-		
-		setName("");
-
-		
-
-		setfirstName("");
-		setlastName("");
-		setmobileNo("");
-
-		
-
-		alert(`You are now registered ${name}!`); */
-
-	}
-
-
-	/* 
-
-	if (password1.length < 8 || password1.length >25){
-    alert(`Your password must be between 8 to 25 chacters. The one you entered had ${password1.length} characters`);
-    return false;
-	}
-
-	Logic flow
-
-	validate email, > (password1 = password2), password1.length if ok > button active
-	validate email, > (password1 = password2) if ok > button active > validate password1.length if false focus on password1 text.
-	validate email, > (password1 = password2) > validate password1.length if false focus on password1 text.
-
-	
-
- 	*/
-
- 
+}
 
 	useEffect(() => {
 
@@ -174,39 +115,17 @@ export default function Register() {
 		// second dependency array below is needed so that changes for email password1,2 changes will load the function. not using the dependency array will keep running the function even there no changes on email, password1,2 
 	}, [firstName, lastName, mobileNo, email, password1, password2])
 
-
-	/* 
-	//Orig useEffect code above
-	useEffect(() => {
-
-		if((email !== "" && password1 !== "" && password2 !== "" && name !== "") && (password1 === password2)) {
-
-			setIsActive(true)
-		} else {
-			setIsActive(false)
-		}
-		
-		// second dependency array below is needed so that changes for email password1,2 changes will load the function. not using the dependency array will keep running the function even there no changes on email, password1,2 
-	}, [email, password1, password2, name])
-
-	 */
-
-	//ACTIVITY CODE s54 start
 	const { user } = useContext(UserContext)
-	//ACTIVITY CODE s54 end
-
+	
 	return (
 
 		//redirects the user to courses if the user is currently login instead of rendering the register page.
-		//ACTIVITY CODE s54 start
 		(user.id !== null) ?
     <Navigate to="/products" />
     	
     	:
 
-    //ACTIVITY CODE s54 end
-
-		<Form className="mt-3" onSubmit={(e) => registerUser(e)}>
+    <Form className="mt-3" onSubmit={(e) => registerUser(e)}>
 			<h1 className="text-center">Register</h1>
 	      	
 			<Form.Group className="mb-3" controlId="firstName">
@@ -245,21 +164,6 @@ export default function Register() {
 		        required />
 	      </Form.Group>
 
-
-			{/* <Form.Group className="mb-3" controlId="name">
-		        <Form.Label>Name</Form.Label>
-		        <Form.Control 
-		        type="text" 
-		        placeholder="Name"
-		        value={name}
-		        onChange={e => {
-			        		setName(e.target.value)
-			        	}}
-		        required />
-	      </Form.Group> */}
-
-
-
 	      	<Form.Group className="mb-3" controlId="userEmail">
 	        <Form.Label>Email address</Form.Label>
 	        <Form.Control 
@@ -268,7 +172,6 @@ export default function Register() {
 	        	value={email}
 	        	onChange={e => {
 	        		setEmail(e.target.value)
-	        		// console.log(e.target.value)
 	        	}}
 	        	required
 
@@ -277,8 +180,7 @@ export default function Register() {
 	          We'll never share your email with anyone else.
         </Form.Text>
       </Form.Group>
-
-      <Form.Group className="mb-3" controlId="password1">
+			<Form.Group className="mb-3" controlId="password1">
         <Form.Label>Password</Form.Label>
         <Form.Control 
 	        type="password" 
@@ -300,10 +202,7 @@ export default function Register() {
 	        	}}
         required />
       </Form.Group>
-
-      
-      
-      {
+			{
       	isActive ?
 	      	<Button variant="primary" type="submit" id="submitBtn">
 	        Submit
@@ -316,7 +215,5 @@ export default function Register() {
       }
 
     </Form>
-
-
-		)
+	)
 }

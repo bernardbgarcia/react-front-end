@@ -3,7 +3,6 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import { Link, NavLink } from 'react-router-dom';
 import UserContext from '../UserContext';
 import Swal from 'sweetalert2';
-//import DeleteIcon from '@material-ui/icons/DeleteOutlineSharp';
 import { Button, Badge } from 'react-bootstrap';
 import { formatCurrency } from "../utilities/formatCurrency";
 import imgUrl2 from '../Images/default.jpg';
@@ -52,15 +51,11 @@ export default function Carts() {
 					setProducts([]);
 					setsubTotal(0);
 
-
-
-
 					Swal.fire({
 						title: 'Perfect!',
 						icon: 'success',
 						text: 'Thank you for the purchase.'
 					})
-					
 					
 					navigate("/Dashboard");
 				}

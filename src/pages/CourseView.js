@@ -55,12 +55,7 @@ export default function CourseView() {
 						text: "Please try again!"
 					})
 				}
-
-
-
 			}
-
-
 
 		)
 	}

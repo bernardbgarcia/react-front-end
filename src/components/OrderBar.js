@@ -40,7 +40,6 @@ export default function OrderBar({user}) {
 		<div>
 			{products.map((product) =>
 				<div className="order-wrapper" key={product._id}>
-					{/* <span>Status: <p className="status">Processing</p></span><br/> */}
 					<span>Order ID: {product._id}</span><br/>
 					<span>Total Amount: {formatCurrency(product.total)}</span><br/>
 					<span>Purchased on: {product.purchasedOn.substring(0, 10)}</span><br/>

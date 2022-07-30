@@ -22,10 +22,7 @@ export default function AdminPanel() {
 	  			<Tab eventKey="panel" title="Panel">
 	  				Adminpanel
 	  			</Tab>
-	  			{/* <Tab eventKey="profile" title="Account">
-	  				<ChangePassword/>
-	  			</Tab> */}
-			  	<Tab eventKey="orders" title={"Orders"}>
+	  			<Tab eventKey="orders" title={"Orders"}>
 			  		<OrderBar user={user}/>
 			  	</Tab>
 			  	<Tab eventKey="loyalty" title={"Loyalty Program"}>

@@ -2,11 +2,7 @@ import {Fragment, useEffect, useState} from 'react';
 import CourseCard from '../components/CourseCard';
 //mockdata
 //import coursesData from '../data/coursesData';
-
-
 export default function Courses() {
-
-	
 
 	const [courses, setCourses] = useState([])
 
@@ -31,9 +27,6 @@ export default function Courses() {
 		})
 
 	}, [])
-
-
-
 
 	return(
 

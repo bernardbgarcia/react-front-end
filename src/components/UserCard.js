@@ -1,28 +1,19 @@
 import { useState, useEffect, useContext } from 'react';
-// import {Row, Col, Card, Button} from 'react-bootstrap';
 import {Card, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-// import ProductEdit from '../pages/ProductEdit';
 import UserContext from '../UserContext';
-// import { TextField } from '@material-ui/core';
 import { TextField } from '@mui/material';
 import Swal from 'sweetalert2';
 
-// export default function CourseCard(props) {
-//export default function CourseCard({courseProp}) {
 export default function UserCard({userProp}) {
 
-	// const { name, description, price, _id } = productProp;
 	const { _id } = userProp;
 
 	const imageStyles = { minWidth: 100, minHeight: 100 };
-	// const imageStyles = { minWidth: 20, minHeight: 24 };
 	
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	// const [password2, setPassword2] = useState("");
-	
 	const [firstName, setfirstName] = useState("");
 	const [lastName, setlastName] = useState("");
 	const [mobileNo, setmobileNo] = useState("");
@@ -30,22 +21,6 @@ export default function UserCard({userProp}) {
 	const [userImageUrl, setUserImageUrl] = useState("");
 	const [loyalty, setLoyalty] = useState("");
 	const [isAdmin, setIsAdmin] = useState("");
-
-	
-/* 
-
-"firstName": "Thor",
-    "lastName": "Son of Odin",
-    "email": "thor@mail.com",
-    "mobileNo": "09128887722",
-    "password": "thor123",
-	"address": "Stark Enterprise Bldg, Avengers Avenue, Los Angeles USA",
-	"userImageUrl": "",
-	"loyalty": ""
-
-
- */
-
 	const { user } = useContext(UserContext);
 	const token = localStorage.getItem('token');
 
@@ -69,24 +44,8 @@ export default function UserCard({userProp}) {
 			setUserImageUrl(data.userImageUrl)
 			setLoyalty(data.loyalty)
 			setIsAdmin(data.isAdmin)
-			// setPassword(data.password)
-
-/* 
-
-const [email, setEmail] = useState("");
-	const [password1, setPassword1] = useState("");
-	const [password2, setPassword2] = useState("");
-	
-	const [firstName, setfirstName] = useState("");
-	const [lastName, setlastName] = useState("");
-	const [mobileNo, setmobileNo] = useState("");
-	const [address, setAddress] = useState("");
-	const [userImageUrl, setUserImageUrl] = useState("");
-	const [loyalty, setLoyalty] = useState("");
-
- */
-
-		})
+			
+			})
 
 	}, [])
 
@@ -107,8 +66,6 @@ const [email, setEmail] = useState("");
 					userImageUrl: userImageUrl,
 					loyalty: loyalty,
 					isAdmin: isAdmin
-
-
 				})
 			})
 			.then(res => res.json())
@@ -137,24 +94,15 @@ const [email, setEmail] = useState("");
 
 	return (
 
-			// 
-			// <Row className="mt-3 mb-3">
-			// 	<Col xs={12} md={12}>
-			// 		<Card className="cardCourseCard p-3">
-				<>
-				      <Card.Body>
+			<>
+		      <Card.Body>
 				      				        
-				      
-
-
-				        <div>
+				<div>
 			<div className="profile-wrapper">
 				<span className="header">User Details</span>
 				<hr/>
 				<span className="email-display">{email}</span> {' '}
 				
-
-
 				<div className="row mt-3">
 					<div className="col-md-6">
 						<p>First Name</p>
@@ -203,10 +151,6 @@ const [email, setEmail] = useState("");
 				        />
 				    </div>
 				    
-				    
-
-
-				    		
 				</div>
 				<div className="row mt-2">
 				
@@ -239,7 +183,6 @@ const [email, setEmail] = useState("");
 				</div>
 				<div className="row mt-2">
 				
-						
 				</div>
 				<div className="row mt-2">
 				
@@ -279,21 +222,13 @@ const [email, setEmail] = useState("");
 
 				<button className="btn btn-success mt-3 custom-size" onClick={() => updateUser()}>Save Changes</button>
 
-
-				
 			</div>
 		</div>
 
 				      </Card.Body>
 				</>
 
-			// 	</Col>
-			// 	
-			// </Row>
-
-
-
-		)
+	)
 
 
 

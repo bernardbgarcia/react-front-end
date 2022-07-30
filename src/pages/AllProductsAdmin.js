@@ -1,19 +1,10 @@
 import {Fragment, useEffect, useState, useContext} from 'react';
-// import CourseCard from '../components/CourseCard';
-// import ProductCard from '../components/ProductCard';
 import ProductSectionAdmin from '../components/ProductSectionAdmin';
-// import ProductCard2 from '../components/ProductCard2';
 import UserContext from '../UserContext';
-
-
-
 
 export default function AllProductsAdmin() {
 
-	
-
 	const [products, setProducts] = useState([])
-
 	const { user } = useContext(UserContext);
 	const token = localStorage.getItem('token');
 

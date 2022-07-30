@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import ProductCard2 from '../components/ProductCard2';
 import Swal from 'sweetalert2';
 
-
 export default function ProductView2() {
 
 	const history = useNavigate();

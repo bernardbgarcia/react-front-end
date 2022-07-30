@@ -1,21 +1,9 @@
-// try in postman
-
-// pass the token 
-
-// call the url
-
-// display the form
-
 //hooks
 import { useState, useEffect, useContext } from 'react';
 import {Form, Button } from 'react-bootstrap';
 import { Navigate, useNavigate } from 'react-router-dom';
-//ACTIVITY CODE s54 start
 import UserContext from '../UserContext';
 import Swal from 'sweetalert2';
-
-//import { useContext } from 'react';
-//ACTIVITY CODE s54 end
 
 export default function Register() {
 
@@ -25,43 +13,15 @@ export default function Register() {
 
     const { user } = useContext(UserContext)
     const token = localStorage.getItem('token');
-
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
     const [quantity, setQuantity] = useState("");
     const [imgUrl, setImgUrl] = useState("");
-    
-    //const [setName] = useState("");
-
-/* 
-
- "name": "Volantex 757-7 Green",
-    "description": "Volantex 757-7 Ranger (PNF) 1600mm FPV Glider (63)",
-    "price": 5000,
-    "quantity": 10,
-    "imgUrl": ""
-
- */
-
-
-    //activity start
-
-    /* const [firstName, setfirstName] = useState("");
-    const [lastName, setlastName] = useState("");
-    const [mobileNo, setmobileNo] = useState(""); */
-
     const navigate = useNavigate();
-
-    //activity end
-
 
     // State to determine whether the submit button is enabled or not
     const [isActive, setIsActive] = useState(false);
-
-    /* console.log(email);
-    console.log(password1);
-    console.log(password2); */
 
     function addProduct(e) {
 
@@ -94,16 +54,11 @@ export default function Register() {
                             text: "You may now log in."
                         })
 
-
-
                         setName("");
                         setDescription("");
                         setPrice("");
                         setQuantity("");
                         setImgUrl("");
-                        
-
-                        // navigate("/login");
 
                     } else {
 
@@ -139,13 +94,10 @@ export default function Register() {
     return (
 
         //redirects the user to courses if the user is currently login instead of rendering the register page.
-        //ACTIVITY CODE s54 start
         (user.id === null) ?
     <Navigate to="/products" />
         
         :
-
-    //ACTIVITY CODE s54 end
 
         <Form className="mt-3" onSubmit={(e) => addProduct(e)}>
             <h1 className="text-center">Add Product</h1>
@@ -219,31 +171,6 @@ export default function Register() {
         </Form.Text>
       </Form.Group>
 
-      {/* <Form.Group className="mb-3" controlId="password1">
-        <Form.Label>Password</Form.Label>
-        <Form.Control 
-            type="password" 
-            placeholder="Password"
-            value={password1}
-            onChange={e => {
-                        setPassword1(e.target.value)
-                    }}
-            required />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="password2">
-        <Form.Label>Verify Password</Form.Label>
-        <Form.Control 
-        type="password" 
-        placeholder="Password"
-        value={password2}
-        onChange={e => {
-                    setPassword2(e.target.value)
-                }}
-        required />
-      </Form.Group> */}
-
-      
-      
       {
         isActive ?
             <Button variant="primary" type="submit" id="submitBtn">
@@ -257,7 +184,6 @@ export default function Register() {
       }
 
     </Form>
-
-
+    
         )
 }

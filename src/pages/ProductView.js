@@ -17,19 +17,12 @@ export default function ProductView() {
 
 	// the "useParams" 
 	const {productId} = useParams()
-
-
-	
-
-
 	const [name, setName] = useState("");
 	const [description, setDescription] = useState("");
 	const [price, setPrice] = useState(0);
 	const [subTotal, setSubTotal] = useState(0);
 	const [imgUrl, setImgUrl] = useState(0);
-
 	const [quantity, setQuantity] = useState(1);
-
 	const increaseQuantity = () => {
 		setQuantity(quantity + 1);
 	}
@@ -39,7 +32,6 @@ export default function ProductView() {
 			setQuantity(quantity - 1);
 		}
 	}
-
 
 	const enroll = (productId, quantity, subTotal) => {
 
@@ -67,7 +59,6 @@ export default function ProductView() {
 					Swal.fire({
 						title: "Added to Cart",
 						icon: "success"
-						/* text: "Added to Cart." */
 					})
 
 					navigate("/products")
@@ -81,11 +72,7 @@ export default function ProductView() {
 					})
 				}
 
-
-
 			}
-
-
 
 		)
 	}
@@ -100,13 +87,10 @@ export default function ProductView() {
 
 			console.log(data)
 			console.warn(imgUrl)
-
 			setName(data.name)
 			setDescription(data.description)
 			setPrice(data.price)
 			setImgUrl(data.imgUrl)
-
-
 		})
 
 	}, [productId])
@@ -119,20 +103,13 @@ export default function ProductView() {
 		        <div className="cart-head-view-wrapper center">
 		          <div className="card cart-view-wrapper">
 		            <h2 className="section-name"> </h2>
-		            
-		            {/* <img src={require('../Images/cartgif.gif')} className="cart-img center" /> */}
-		            {/* <img src={data.imgUrl} className="cart-img center" /> */}
 		            <h3 className="item-price"> </h3>
 		            
 					        <Card.Title className="center" >{name}</Card.Title><br/>
-					        {/* <Card.Subtitle className="center">Description:</Card.Subtitle> */}
 					        <Card.Text className="center">{description}</Card.Text>
 					        <Card.Subtitle className="center">Price:</Card.Subtitle>
 					        <Card.Text className="center"> { formatCurrency(price) }</Card.Text>
 					        
-					        
-					        
-
 					        {
 					        	user.id !== null ?
 
@@ -156,9 +133,7 @@ export default function ProductView() {
 
 					        }
 
-					      
-
-					        {
+					      	{
 					        	user.id !== null ?
 
 					        		user.isAdmin !== true ?
@@ -175,76 +150,10 @@ export default function ProductView() {
 
 					        }
 					        
-					    
-		            {/* <button type="button" className="card-btn">RC Planes</button> */}
-		          </div>
+					</div>
 			</div>
 		     </section>
 		</div>
 
-		/* <Container className="mt-3">
-			<Row>
-				<Col lg={{span:6, offset:3}}>
-					<Card>
-					    <Card.Body className="text-center">
-					        <Card.Title>{name}</Card.Title>
-					        <Card.Subtitle>Description:</Card.Subtitle>
-					        <Card.Text>{description}</Card.Text>
-					        <Card.Subtitle>Price:</Card.Subtitle>
-					        <Card.Text> { formatCurrency(price) }</Card.Text>
-					        
-					        
-					        
-
-					        {
-					        	user.id !== null ?
-
-					        		user.isAdmin !== true ?
-
-							        	<span className="d-flex my-2">
-											<button type="button" className="quantity-btn" onClick={increaseQuantity}>+</button>
-											<p className="quantity-text">{quantity}</p>
-											<button className="quantity-btn" onClick={decreaseQuantity}>-</button>
-										</span>
-
-										:
-
-										<span></span>
-
-					        	:
-
-					        	<span></span>
-
-					        }
-
-					      
-
-					        {
-					        	user.id !== null ?
-
-					        		user.isAdmin !== true ?
-
-					        			<Button variant="primary" onClick={() => enroll(productId, quantity)}>Add to Cart</Button>
-
-					        			:
-
-					        			<Link className="btn btn-danger" to="/allproductsadmin"> Go to All Products Admin Page </Link>
-
-					        	:
-
-					        	<Link className="btn btn-danger" to="/login"> Log in to Shop </Link>
-
-					        }
-					        
-					    </Card.Body>
-					</Card>
-				 </Col>
-			</Row>
-		</Container> */
-
-
 		)
-
-
-
 }

@@ -1,28 +1,20 @@
 import { useState, useEffect, useContext } from 'react';
-// import {Row, Col, Card, Button} from 'react-bootstrap';
 import {Card, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ProductEdit from '../pages/ProductEdit';
 import UserContext from '../UserContext';
-// import { TextField } from '@material-ui/core';
 import { TextField } from '@mui/material';
 import Swal from 'sweetalert2';
 
-// export default function CourseCard(props) {
-//export default function CourseCard({courseProp}) {
 export default function ProductSectionAdmin({productProp}) {
 
-	// const { name, description, price, _id } = productProp;
 	const { _id } = productProp;
-
 	const [name, setName] = useState('');
 	const [description, setDescription] = useState('');
 	const [price, setPrice] = useState('');
 	const [isActive, setIsActive] = useState(true);
 	const [quantity, setQuantity] = useState('');
 	const [imgUrl, setImgUrl] = useState('');
-	
-
 	const imageStyles = { minWidth: 100, minHeight: 100 };
 	const { user } = useContext(UserContext);
 	const token = localStorage.getItem('token');
@@ -45,7 +37,6 @@ export default function ProductSectionAdmin({productProp}) {
 			setIsActive(data.isActive)
 			setQuantity(data.quantity)
 			setImgUrl(data.imgUrl)
-
 
 		})
 
@@ -89,18 +80,10 @@ export default function ProductSectionAdmin({productProp}) {
 			})
 		}
 
-
-		
-
 	return (
 
-			// 
-			// <Row className="mt-3 mb-3">
-			// 	<Col xs={12} md={12}>
-			// 		<Card className="cardCourseCard p-3">
 				<>
-				      {/* <Card.Body> */}
-
+			
         <div>
 			<div className="profile-wrapper2">
 				<span className="header1">Product Details </span>
@@ -187,17 +170,7 @@ export default function ProductSectionAdmin({productProp}) {
 			</div>
 		</div>
 
-				      {/* </Card.Body> */}
-				</>
-
-			// 	</Col>
-			// 	
-			// </Row>
-
-
-
+				      </>
 		)
-
-
 
 }

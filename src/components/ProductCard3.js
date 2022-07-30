@@ -53,8 +53,6 @@ return (
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 
-            
-            	
               </Typography>
             </Grid>
             <Grid item align="center" justify="center" alignItems="center">

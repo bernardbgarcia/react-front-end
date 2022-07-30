@@ -128,7 +128,6 @@ export default function ProductView() {
 					        <Card.Text>{imgUrl}</Card.Text>
 					        <Card.Subtitle>Status:</Card.Subtitle>
 					        <Card.Text>{isStatus}</Card.Text>
-					        
 					        <Card.Subtitle>Class Schedule:</Card.Subtitle>
 					        <Card.Text>PRODUCT EDIT PAGE</Card.Text>
 					        
@@ -153,12 +152,6 @@ export default function ProductView() {
 					        	<span></span>
 
 					        }
-
-					        {/* <span className="d-flex my-2">
-								<button type="button" className="quantity-btn" onClick={increaseQuantity}>+</button>
-								<p className="quantity-text">{quantity}</p>
-								<button className="quantity-btn" onClick={decreaseQuantity}>-</button>
-							</span> */}
 
 					        {
 					        	user.id !== null ?
